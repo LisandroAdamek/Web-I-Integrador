@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Contacto | Aguante Boca Net</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="HaceteSocioCSS.css">
+    <script src="Formulario.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="index.html" aria-label="Aguante Boca Net - Inicio">
+            <img src="img/escudos/BocaEscudo.png" alt="Escudo de Boca Juniors">
+            <span>AGUANTE <strong>BOCA</strong></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegacion principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="PresentacionJugadores.html">Jugadores</a></li>
+            </ul>
+        </nav>
+
+        <a href="HacerseSocio.html" class="miembro">Contactanos <span>↗</span></a>
+    </header>
+
+    <main>
+        <section class="contacto-hero">
+            <span class="etiqueta">ESTAMOS PARA ESCUCHARTE</span>
+            <h1>Hablemos de <span>Boca.</span></h1>
+            <p>¿Tenes alguna consulta, sugerencia o simplemente queres compartir tu pasion xeneize? Escribinos.</p>
+        </section>
+
+        <section class="contacto-contenido">
+            <aside class="contacto-info">
+                <span class="etiqueta">CONTACTO XENEIZE</span>
+                <h2>La pasion tambien se comparte.</h2>
+                <p>Completa el formulario y dejanos tu mensaje. Revisaremos los datos antes de mostrarte el resumen.</p>
+
+                <div class="contacto-dato">
+                    <span class="dato-icono" aria-hidden="true">✉</span>
+                    <div>
+                        <h3>Correo electronico</h3>
+                        <p>contacto@aguantebocanet.com</p>
+                    </div>
+                </div>
+
+                <div class="contacto-dato">
+                    <span class="dato-icono" aria-hidden="true">☎</span>
+                    <div>
+                        <h3>Telefono</h3>
+                        <p>+54 266 000 0000</p>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="formulario-contenedor" aria-labelledby="titulo-formulario">
+                <div class="formulario-encabezado">
+                    <span class="etiqueta">TU MENSAJE</span>
+                    <h2 id="titulo-formulario">Contactanos</h2>
+                    <p>Los campos marcados con * son obligatorios.</p>
+                </div>
+
+                <form id="formulario-contacto" novalidate>
+                    <div class="campo">
+                        <label for="nombre">Nombre completo *</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Tu nombre y apellido"
+                            autocomplete="name"
+                            required
+                            minlength="3"
+                            maxlength="80"
+                            aria-describedby="error-nombre"
+                        >
+                        <small class="error" id="error-nombre"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo electronico *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="tunombre@ejemplo.com"
+                            autocomplete="email"
+                            required
+                            maxlength="100"
+                            aria-describedby="error-email"
+                        >
+                        <small class="error" id="error-email"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Telefono *</label>
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Ej.: 266 4123456"
+                            autocomplete="tel"
+                            required
+                            minlength="8"
+                            maxlength="20"
+                            aria-describedby="error-telefono"
+                        >
+                        <small class="error" id="error-telefono"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" name="asunto" required aria-describedby="error-asunto">
+                            <option value="">Selecciona un asunto</option>
+                            <option value="Consulta">Consulta</option>
+                            <option value="Sugerencia">Sugerencia</option>
+                            <option value="Contenido del sitio">Contenido del sitio</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <small class="error" id="error-asunto"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="4"
+                            placeholder="Escribi tu mensaje..."
+                            required
+                            minlength="10"
+                            maxlength="500"
+                            aria-describedby="error-mensaje"
+                        ></textarea>
+                        <small class="error" id="error-mensaje"></small>
+                    </div>
+
+                    <div id="estado-formulario" class="estado-formulario" role="status" aria-live="polite"></div>
+
+                    <button type="submit" class="boton-enviar">
+                        VALIDAR Y ENVIAR
+                    </button>
+                </form>
+
+                <section id="resumen" class="resumen" aria-labelledby="titulo-resumen" hidden>
+                    <span class="etiqueta">DATOS VALIDADOS</span>
+                    <h2 id="titulo-resumen">¡Gracias por escribirnos!</h2>
+                    <div id="resumen-datos"></div>
+                    <button type="button" id="volver-formulario" class="boton-secundario">
+                        VOLVER AL FORMULARIO
+                    </button>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="footer-marca">AGUANTE BOCA NET</a>
+        <p>Una pagina hecha por hinchas, para hinchas.</p>
+        <span>DALE BOCA 💙💛</span>
+    </footer>
+</body>
+</html>

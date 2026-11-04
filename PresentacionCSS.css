@@ -1,0 +1,330 @@
+:root {
+    --azul-noche: #071426;
+    --azul: #0d2c55;
+    --azul-claro: #153665;
+    --dorado: #f2c14e;
+    --blanco: #f7f9fc;
+    --gris: #aab7c9;
+    --borde: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--azul-noche);
+    color: var(--blanco);
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    min-height: 82px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(7, 20, 38, 0.97);
+    border-bottom: 1px solid var(--borde);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+
+.logo strong {
+    color: var(--dorado);
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--gris);
+    font-size: 14px;
+    font-weight: 800;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.activo {
+    color: var(--dorado);
+}
+
+.nav-links a.activo {
+    padding-bottom: 7px;
+}
+
+.miembro {
+    padding: 10px 16px;
+    border: 1px solid rgba(242, 193, 78, 0.6);
+    border-radius: 5px;
+    color: var(--dorado);
+    font-size: 13px;
+    font-weight: 900;
+    white-space: nowrap;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.miembro span {
+    margin-left: 5px;
+}
+
+.miembro:hover {
+    transform: translateY(-2px);
+    background-color: #ffda78;
+    color: #08172a;
+}
+
+.plantel-hero {
+    min-height: 340px;
+    padding: 80px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 50% 100%, #153665 0%, transparent 65%),
+        var(--azul-noche);
+    border-bottom: 1px solid var(--borde);
+}
+
+.etiqueta {
+    color: var(--dorado);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.plantel-hero h1 {
+    margin-top: 12px;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.plantel-hero h1 span {
+    color: var(--dorado);
+}
+
+.plantel-hero p {
+    max-width: 600px;
+    margin-top: 20px;
+    color: var(--gris);
+    font-size: 17px;
+}
+
+.plantel-dato {
+    margin-top: 28px;
+    color: var(--dorado);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.plantel {
+    padding: 75px 7%;
+    background: #0b1b30;
+}
+
+.seccion-encabezado {
+    max-width: 1200px;
+    margin: 0 auto 35px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.seccion-encabezado h2 {
+    margin-top: 5px;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 900;
+}
+
+.plantel-contador {
+    padding-bottom: 8px;
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.jugadores-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.jugador-card {
+    flex: 1 1 280px;
+    min-width: 0;
+    overflow: hidden;
+    background: linear-gradient(145deg, #122b4b, #0a1729);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.jugador-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(242, 193, 78, 0.6);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+}
+
+.jugador-imagen {
+    position: relative;
+    height: 320px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 70%, #244d7f 0%, transparent 70%),
+        #102744;
+}
+
+.jugador-imagen::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(transparent 65%, rgba(7, 20, 38, 0.5));
+}
+
+.jugador-imagen img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    transition: transform 0.3s;
+}
+
+.jugador-card:hover .jugador-imagen img {
+    transform: scale(1.04);
+}
+
+.jugador-info {
+    padding: 23px;
+}
+
+.jugador-posicion {
+    color: var(--dorado);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.jugador-info h3 {
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.jugador-info p {
+    margin-top: 8px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.plantel-cta {
+    padding: 55px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: linear-gradient(110deg, #0d2c55, #10213a);
+    border-top: 1px solid var(--borde);
+}
+
+.plantel-cta h2 {
+    margin-top: 8px;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 900;
+}
+
+.plantel-cta p {
+    margin-top: 8px;
+    color: var(--gris);
+}
+
+.boton-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 22px;
+    background: var(--dorado);
+    color: var(--azul-noche);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    transition: transform 0.2s, background 0.2s;
+    white-space: nowrap;
+}
+
+.boton-principal:hover {
+    transform: translateY(-2px);
+    background: #ffda75;
+}
+
+.footer {
+    padding: 28px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #050e1a;
+    border-top: 1px solid var(--borde);
+}
+
+.footer-marca {
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.footer p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+.footer > span {
+    color: var(--dorado);
+    font-size: 12px;
+    font-weight: 900;
+}
