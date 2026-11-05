@@ -30,11 +30,9 @@ function validarCampo(campo) {
                 mensaje = "El nombre es obligatorio.";
             } else if (valor.length < 3 || valor.length > 80) {
                 mensaje = "El nombre debe tener entre 3 y 80 caracteres.";
-            } else if (/\s{2,}/.test(valor)) {
-                mensaje = "No ingreses varios espacios seguidos.";
-            } else if (/^[a-zA-Z\u00f1\u00d1\s'-]+$/.test(valor)) {
-                mensaje = "Ingresa un nombre valido, sin numeros ni simbolos.";
-            }
+            } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/.test(valor)){
+                mensaje = "Nombre invalido";
+            } 
             break;
 
         case "email":
@@ -70,7 +68,7 @@ function validarCampo(campo) {
 
         case "asunto":
             if (valor === "") {
-                valor = "Otro";
+                asunto.value = "Otro";
             }
             break;
 
@@ -181,4 +179,5 @@ Object.values(campos).forEach((campo) => {
 botonVolver.addEventListener("click", function () {
     resumen.hidden = true;
     campos.nombre.focus();
+    formulario.reset();
 });
