@@ -32,7 +32,7 @@ function validarCampo(campo) {
                 mensaje = "El nombre debe tener entre 3 y 80 caracteres.";
             } else if (/\s{2,}/.test(valor)) {
                 mensaje = "No ingreses varios espacios seguidos.";
-            } else if (/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u.test(valor)) {
+            } else if (/^[a-zA-Z\u00f1\u00d1\s'-]+$/.test(valor)) {
                 mensaje = "Ingresa un nombre valido, sin numeros ni simbolos.";
             }
             break;
