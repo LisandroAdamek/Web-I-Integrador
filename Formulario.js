@@ -32,7 +32,7 @@ function validarCampo(campo) {
                 mensaje = "El nombre debe tener entre 3 y 80 caracteres.";
             } else if (/\s{2,}/.test(valor)) {
                 mensaje = "No ingreses varios espacios seguidos.";
-            } else if (!/^[\p{L}]+(?:[ '\u2019-][\p{L}]+)*$/u.test(valor)) {
+            } else if (/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u.test(valor)) {
                 mensaje = "Ingresa un nombre valido, sin numeros ni simbolos.";
             }
             break;
@@ -40,7 +40,7 @@ function validarCampo(campo) {
         case "email":
             if (valor === "") {
                 mensaje = "El correo electronico es obligatorio.";
-            } else if (valor.length > 100) {
+            } else if (valor.length > 50) {
                 mensaje = "El correo no puede superar los 100 caracteres.";
             } else if (/\s/.test(valor)) {
                 mensaje = "El correo no puede contener espacios.";
@@ -70,7 +70,7 @@ function validarCampo(campo) {
 
         case "asunto":
             if (valor === "") {
-                mensaje = "Selecciona un asunto.";
+                valor = "Otro";
             }
             break;
 
